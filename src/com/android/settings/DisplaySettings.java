@@ -176,8 +176,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (RotationPolicy.isRotationLockToggleVisible(activity)) {
             DropDownPreference rotatePreference =
                     (DropDownPreference) findPreference(KEY_AUTO_ROTATE);
-            rotatePreference.addItem(activity.getString(R.string.display_auto_rotate_rotate),
-                    false);
             int rotateLockedResourceId;
             // The following block sets the string used when rotation is locked.
             // If the device locks specifically to portrait or landscape (rather than current
@@ -195,6 +193,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 }
             }
             rotatePreference.addItem(activity.getString(rotateLockedResourceId), true);
+            rotatePreference.addItem(activity.getString(R.string.display_auto_rotate_rotate),
+                    false);
             rotatePreference.setSelectedItem(RotationPolicy.isRotationLocked(activity) ?
                     1 : 0);
             rotatePreference.setCallback(new Callback() {
