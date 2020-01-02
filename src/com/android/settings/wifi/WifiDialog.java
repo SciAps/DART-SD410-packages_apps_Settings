@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 class WifiDialog extends AlertDialog implements WifiConfigUiBase {
@@ -72,6 +73,8 @@ class WifiDialog extends AlertDialog implements WifiConfigUiBase {
              * visibility. Right after creation, update button visibility */
             mController.enableSubmitIfAppropriate();
         }
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN |
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     @Override
