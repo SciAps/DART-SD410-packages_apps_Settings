@@ -61,33 +61,33 @@ public final class SearchIndexableResources {
             new HashMap<String, SearchIndexableResource>();
 
     static {
-        sResMap.put(WifiSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(WifiSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        WifiSettings.class.getName(),
-                        R.drawable.ic_settings_wireless));
+//        sResMap.put(WifiSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(WifiSettings.class.getName()),
+//                        NO_DATA_RES_ID,
+//                        WifiSettings.class.getName(),
+//                        R.drawable.ic_settings_wireless));
 
-        sResMap.put(AdvancedWifiSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(AdvancedWifiSettings.class.getName()),
-                        R.xml.wifi_advanced_settings,
-                        AdvancedWifiSettings.class.getName(),
-                        R.drawable.ic_settings_wireless));
+//        sResMap.put(AdvancedWifiSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(AdvancedWifiSettings.class.getName()),
+//                        R.xml.wifi_advanced_settings,
+//                        AdvancedWifiSettings.class.getName(),
+//                        R.drawable.ic_settings_wireless));
 
-        sResMap.put(SavedAccessPointsWifiSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(SavedAccessPointsWifiSettings.class.getName()),
-                        R.xml.wifi_display_saved_access_points,
-                        SavedAccessPointsWifiSettings.class.getName(),
-                        R.drawable.ic_settings_wireless));
+//        sResMap.put(SavedAccessPointsWifiSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(SavedAccessPointsWifiSettings.class.getName()),
+//                        R.xml.wifi_display_saved_access_points,
+//                        SavedAccessPointsWifiSettings.class.getName(),
+//                        R.drawable.ic_settings_wireless));
 
-        sResMap.put(BluetoothSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(BluetoothSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        BluetoothSettings.class.getName(),
-                        R.drawable.ic_settings_bluetooth2));
+//        sResMap.put(BluetoothSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(BluetoothSettings.class.getName()),
+//                        NO_DATA_RES_ID,
+//                        BluetoothSettings.class.getName(),
+//                        R.drawable.ic_settings_bluetooth2));
 
         sResMap.put(SimSettings.class.getName(),
                 new SearchIndexableResource(
@@ -103,19 +103,19 @@ public final class SearchIndexableResources {
                         DataUsageSummary.class.getName(),
                         R.drawable.ic_settings_data_usage));
 
-        sResMap.put(DataUsageMeteredSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(DataUsageMeteredSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        DataUsageMeteredSettings.class.getName(),
-                        R.drawable.ic_settings_data_usage));
+//        sResMap.put(DataUsageMeteredSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(DataUsageMeteredSettings.class.getName()),
+//                        NO_DATA_RES_ID,
+//                        DataUsageMeteredSettings.class.getName(),
+//                        R.drawable.ic_settings_data_usage));
 
-        sResMap.put(WirelessSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(WirelessSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        WirelessSettings.class.getName(),
-                        R.drawable.ic_settings_more));
+//        sResMap.put(WirelessSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(WirelessSettings.class.getName()),
+//                        NO_DATA_RES_ID,
+//                        WirelessSettings.class.getName(),
+//                        R.drawable.ic_settings_more));
 
         sResMap.put(HomeSettings.class.getName(),
                 new SearchIndexableResource(
@@ -257,12 +257,12 @@ public final class SearchIndexableResources {
                         PrintSettingsFragment.class.getName(),
                         R.drawable.ic_settings_print));
 
-        sResMap.put(DevelopmentSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(DevelopmentSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        DevelopmentSettings.class.getName(),
-                        R.drawable.ic_settings_development));
+//        sResMap.put(DevelopmentSettings.class.getName(),
+//                new SearchIndexableResource(
+//                        Ranking.getRankForClassName(DevelopmentSettings.class.getName()),
+//                        NO_DATA_RES_ID,
+//                        DevelopmentSettings.class.getName(),
+//                        R.drawable.ic_settings_development));
 
         sResMap.put(DeviceInfoSettings.class.getName(),
                 new SearchIndexableResource(

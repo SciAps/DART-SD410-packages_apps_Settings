@@ -112,7 +112,7 @@
             android:title="@string/verify_apps_over_usb_title"
             android:summary="@string/verify_apps_over_usb_summary"/>
 
-        <SwitchPreference
+<!--        <SwitchPreference
             android:key="wifi_display_certification"
             android:title="@string/wifi_display_certification"
             android:summary="@string/wifi_display_certification_summary"/>
@@ -130,7 +130,7 @@
        <SwitchPreference
             android:key="wifi_allow_scan_with_traffic"
             android:title="@string/wifi_allow_scan_with_traffic" />
-            android:summary="@string/wifi_allow_scan_with_traffic_summary"/>
+            android:summary="@string/wifi_allow_scan_with_traffic_summary"/> -->
 
         <ListPreference
             android:key="select_logd_size"

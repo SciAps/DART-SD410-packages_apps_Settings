@@ -613,7 +613,8 @@ public class WirelessSettings extends SettingsPreferenceFragment
         };
 
     private boolean isWifiCallingSettingsSupported() {
-        return getActivity().getResources().getBoolean(
-                R.bool.config_wifi_calling_settings_supported);
+        //return getActivity().getResources().getBoolean(
+        //        R.bool.config_wifi_calling_settings_supported);
+        return false;
     }
 }

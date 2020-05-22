@@ -1189,14 +1189,14 @@ public class SettingsActivity extends Activity
                     }
                 } else if (id == R.id.wifi_settings) {
                     // Remove WiFi Settings if WiFi service is not available.
-                    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {
+                    //if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {
                         removeTile = true;
-                    }
+                    //}
                 } else if (id == R.id.bluetooth_settings) {
                     // Remove Bluetooth Settings if Bluetooth service is not available.
-                    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
+                    //if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
                         removeTile = true;
-                    }
+                    //}
                 } else if (id == R.id.lte_4g_settings) {
                     if (!getResources().getBoolean(R.bool.config_4gsettings_enabled)) {
                         removeTile = true;

@@ -380,10 +380,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mDebugLayout = findAndInitSwitchPref(DEBUG_LAYOUT_KEY);
         mForceRtlLayout = findAndInitSwitchPref(FORCE_RTL_LAYOUT_KEY);
         mDebugHwOverdraw = addListPreference(DEBUG_HW_OVERDRAW_KEY);
-        mWifiDisplayCertification = findAndInitSwitchPref(WIFI_DISPLAY_CERTIFICATION_KEY);
-        mWifiVerboseLogging = findAndInitSwitchPref(WIFI_VERBOSE_LOGGING_KEY);
-        mWifiAggressiveHandover = findAndInitSwitchPref(WIFI_AGGRESSIVE_HANDOVER_KEY);
-        mWifiAllowScansWithTraffic = findAndInitSwitchPref(WIFI_ALLOW_SCAN_WITH_TRAFFIC_KEY);
+//        mWifiDisplayCertification = findAndInitSwitchPref(WIFI_DISPLAY_CERTIFICATION_KEY);
+//        mWifiVerboseLogging = findAndInitSwitchPref(WIFI_VERBOSE_LOGGING_KEY);
+//        mWifiAggressiveHandover = findAndInitSwitchPref(WIFI_AGGRESSIVE_HANDOVER_KEY);
+//        mWifiAllowScansWithTraffic = findAndInitSwitchPref(WIFI_ALLOW_SCAN_WITH_TRAFFIC_KEY);
         mLogdSize = addListPreference(SELECT_LOGD_SIZE_KEY);
 
         mWindowAnimationScale = addListPreference(WINDOW_ANIMATION_SCALE_KEY);
@@ -627,10 +627,10 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         updateBugreportOptions();
         updateForceRtlOptions();
         updateLogdSizeValues();
-        updateWifiDisplayCertificationOptions();
-        updateWifiVerboseLoggingOptions();
-        updateWifiAggressiveHandoverOptions();
-        updateWifiAllowScansWithTrafficOptions();
+//        updateWifiDisplayCertificationOptions();
+//        updateWifiVerboseLoggingOptions();
+//        updateWifiAggressiveHandoverOptions();
+//        updateWifiAllowScansWithTrafficOptions();
         updateSimulateColorSpace();
         updateUseNuplayerOptions();
         updateUSBAudioOptions();
@@ -1123,42 +1123,42 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     }
 
     private void updateWifiDisplayCertificationOptions() {
-        updateSwitchPreference(mWifiDisplayCertification, Settings.Global.getInt(
-                getActivity().getContentResolver(),
-                Settings.Global.WIFI_DISPLAY_CERTIFICATION_ON, 0) != 0);
+//        updateSwitchPreference(mWifiDisplayCertification, Settings.Global.getInt(
+//                getActivity().getContentResolver(),
+//                Settings.Global.WIFI_DISPLAY_CERTIFICATION_ON, 0) != 0);
     }
 
     private void writeWifiDisplayCertificationOptions() {
-        Settings.Global.putInt(getActivity().getContentResolver(),
-                Settings.Global.WIFI_DISPLAY_CERTIFICATION_ON,
-                mWifiDisplayCertification.isChecked() ? 1 : 0);
+//        Settings.Global.putInt(getActivity().getContentResolver(),
+//                Settings.Global.WIFI_DISPLAY_CERTIFICATION_ON,
+//                mWifiDisplayCertification.isChecked() ? 1 : 0);
     }
 
     private void updateWifiVerboseLoggingOptions() {
-        boolean enabled = mWifiManager.getVerboseLoggingLevel() > 0;
-        updateSwitchPreference(mWifiVerboseLogging, enabled);
+//        boolean enabled = mWifiManager.getVerboseLoggingLevel() > 0;
+//        updateSwitchPreference(mWifiVerboseLogging, enabled);
     }
 
     private void writeWifiVerboseLoggingOptions() {
-        mWifiManager.enableVerboseLogging(mWifiVerboseLogging.isChecked() ? 1 : 0);
+//        mWifiManager.enableVerboseLogging(mWifiVerboseLogging.isChecked() ? 1 : 0);
     }
 
     private void updateWifiAggressiveHandoverOptions() {
-        boolean enabled = mWifiManager.getAggressiveHandover() > 0;
-        updateSwitchPreference(mWifiAggressiveHandover, enabled);
+//        boolean enabled = mWifiManager.getAggressiveHandover() > 0;
+//        updateSwitchPreference(mWifiAggressiveHandover, enabled);
     }
 
     private void writeWifiAggressiveHandoverOptions() {
-        mWifiManager.enableAggressiveHandover(mWifiAggressiveHandover.isChecked() ? 1 : 0);
+//        mWifiManager.enableAggressiveHandover(mWifiAggressiveHandover.isChecked() ? 1 : 0);
     }
 
     private void updateWifiAllowScansWithTrafficOptions() {
-        boolean enabled = mWifiManager.getAllowScansWithTraffic() > 0;
-        updateSwitchPreference(mWifiAllowScansWithTraffic, enabled);
+//        boolean enabled = mWifiManager.getAllowScansWithTraffic() > 0;
+//        updateSwitchPreference(mWifiAllowScansWithTraffic, enabled);
     }
 
     private void writeWifiAllowScansWithTrafficOptions() {
-        mWifiManager.setAllowScansWithTraffic(mWifiAllowScansWithTraffic.isChecked() ? 1 : 0);
+//        mWifiManager.setAllowScansWithTraffic(mWifiAllowScansWithTraffic.isChecked() ? 1 : 0);
     }
 
     private void updateLogdSizeValues() {
@@ -1720,7 +1720,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             writeDebugLayoutOptions();
         } else if (preference == mForceRtlLayout) {
             writeForceRtlOptions();
-        } else if (preference == mWifiDisplayCertification) {
+        /*} else if (preference == mWifiDisplayCertification) {
             writeWifiDisplayCertificationOptions();
         } else if (preference == mWifiVerboseLogging) {
             writeWifiVerboseLoggingOptions();
@@ -1729,7 +1729,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         } else if (preference == mWifiAllowScansWithTraffic) {
             writeWifiAllowScansWithTrafficOptions();
         } else if (preference == mUseAwesomePlayer) {
-            writeUseAwesomePlayerOptions();
+            writeUseAwesomePlayerOptions(); */
         } else if (preference == mUSBAudio) {
             writeUSBAudioOptions();
         } else {
