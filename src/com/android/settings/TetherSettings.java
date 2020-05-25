@@ -146,8 +146,8 @@ public class TetherSettings extends SettingsPreferenceFragment
 
         final Activity activity = getActivity();
         mContext = activity;
-        mShowHotspotSetting = getResources().getBoolean(R.bool.show_wifi_hotspot_settings);
-        mHideWifiHotspot = getResources().getBoolean(R.bool.hide_wifi_hotspot);
+        mShowHotspotSetting = false;//getResources().getBoolean(R.bool.show_wifi_hotspot_settings);
+        mHideWifiHotspot = true;//getResources().getBoolean(R.bool.hide_wifi_hotspot);
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
         if (adapter != null) {
             adapter.getProfileProxy(activity.getApplicationContext(), mProfileServiceListener,
@@ -155,23 +155,23 @@ public class TetherSettings extends SettingsPreferenceFragment
         }
 
         if (mShowHotspotSetting) {
-            mEnableWifiApSwitch =
-                    (HotspotPreference) findPreference(ENABLE_WIFI_AP_SWITCH);
-            getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP));
-            getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
+//            mEnableWifiApSwitch =
+//                    (HotspotPreference) findPreference(ENABLE_WIFI_AP_SWITCH);
+//            getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP));
+//            getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
         } else {
-            mEnableWifiAp =
-                    (SwitchPreference) findPreference(ENABLE_WIFI_AP);
-            getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP_SWITCH));
-            if (mHideWifiHotspot) {
-                getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP));
-                getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
-            }
+//            mEnableWifiAp =
+//                    (SwitchPreference) findPreference(ENABLE_WIFI_AP);
+//            getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP_SWITCH));
+//            if (mHideWifiHotspot) {
+//                getPreferenceScreen().removePreference(findPreference(ENABLE_WIFI_AP));
+//                getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
+//            }
         }
 
         mUsbTether = (SwitchPreference) findPreference(USB_TETHER_SETTINGS);
-        mHotsoptMode = (ListPreference) findPreference(KEY_HOTSPOT_MODE);
-        mBluetoothTether = (SwitchPreference) findPreference(ENABLE_BLUETOOTH_TETHERING);
+//        mHotsoptMode = (ListPreference) findPreference(KEY_HOTSPOT_MODE);
+//        mBluetoothTether = (SwitchPreference) findPreference(ENABLE_BLUETOOTH_TETHERING);
 
         mStorageManager = (StorageManager)getSystemService(Context.STORAGE_SERVICE);
         ConnectivityManager cm =
@@ -191,44 +191,44 @@ public class TetherSettings extends SettingsPreferenceFragment
             getPreferenceScreen().removePreference(mUsbTether);
         }
 
-        if (wifiAvailable && !Utils.isMonkeyRunning()) {
-            if (mShowHotspotSetting) {
-                mWifiApEnablerSwitch = new WifiApEnablerSwitch(activity, mEnableWifiApSwitch);
-            } else if (!mHideWifiHotspot) {
-                mWifiApEnabler = new WifiApEnabler(activity, mEnableWifiAp);
-                initWifiTethering();
-            }
-        } else {
-            if (mEnableWifiAp != null) {
-                getPreferenceScreen().removePreference(mEnableWifiAp);
-            }
-            if (mEnableWifiApSwitch != null) {
-                getPreferenceScreen().removePreference(mEnableWifiApSwitch);
-            }
-            if (findPreference(WIFI_AP_SSID_AND_SECURITY) != null) {
-                getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
-            }
-        }
+//        if (wifiAvailable && !Utils.isMonkeyRunning()) {
+//            if (mShowHotspotSetting) {
+//                mWifiApEnablerSwitch = new WifiApEnablerSwitch(activity, mEnableWifiApSwitch);
+//            } else if (!mHideWifiHotspot) {
+//                mWifiApEnabler = new WifiApEnabler(activity, mEnableWifiAp);
+//                initWifiTethering();
+//            }
+//        } else {
+//            if (mEnableWifiAp != null) {
+//                getPreferenceScreen().removePreference(mEnableWifiAp);
+//            }
+//            if (mEnableWifiApSwitch != null) {
+//                getPreferenceScreen().removePreference(mEnableWifiApSwitch);
+//            }
+//            if (findPreference(WIFI_AP_SSID_AND_SECURITY) != null) {
+//                getPreferenceScreen().removePreference(findPreference(WIFI_AP_SSID_AND_SECURITY));
+//            }
+//        }
 
-        if (hotsoptAvailable) {
-            mHotsoptMode.setOnPreferenceChangeListener(this);
-            String hotsoptMode = HotsoptService.getHotspotMode(activity);
-            mHotsoptMode.setValue(hotsoptMode);
-            updateHotsoptModeSummary(hotsoptMode);
-        } else {
-            this.getPreferenceScreen().removePreference(mHotsoptMode);
-        }
+//        if (hotsoptAvailable) {
+//            mHotsoptMode.setOnPreferenceChangeListener(this);
+//            String hotsoptMode = HotsoptService.getHotspotMode(activity);
+//            mHotsoptMode.setValue(hotsoptMode);
+//            updateHotsoptModeSummary(hotsoptMode);
+///        } else {
+//            this.getPreferenceScreen().removePreference(mHotsoptMode);
+//        }
 
-        if (!bluetoothAvailable) {
-            getPreferenceScreen().removePreference(mBluetoothTether);
-        } else {
-            BluetoothPan pan = mBluetoothPan.get();
-            if (pan != null && pan.isTetheringOn()) {
-                mBluetoothTether.setChecked(true);
-            } else {
-                mBluetoothTether.setChecked(false);
-            }
-        }
+//        if (!bluetoothAvailable) {
+//            getPreferenceScreen().removePreference(mBluetoothTether);
+//        } else {
+//            BluetoothPan pan = mBluetoothPan.get();
+//            if (pan != null && pan.isTetheringOn()) {
+//                mBluetoothTether.setChecked(true);
+//            } else {
+//                mBluetoothTether.setChecked(false);
+//            }
+//        }
         mProvisionApp = getResources().getStringArray(
                 com.android.internal.R.array.config_mobile_hotspot_provision_app);
     }
@@ -433,7 +433,7 @@ public class TetherSettings extends SettingsPreferenceFragment
     private void updateState(String[] available, String[] tethered,
             String[] errored) {
         updateUsbState(available, tethered, errored);
-        updateBluetoothState(available, tethered, errored);
+        //updateBluetoothState(available, tethered, errored);
     }
 
 
@@ -645,27 +645,27 @@ public class TetherSettings extends SettingsPreferenceFragment
 
     private void startTethering() {
         switch (mTetherChoice) {
-            case WIFI_TETHERING:
-                if (mShowHotspotSetting) {
-                    mWifiApEnablerSwitch.setSoftapEnabled(true);
-                } else {
-                    mWifiApEnabler.setSoftapEnabled(true);
-                }
-                break;
-            case BLUETOOTH_TETHERING:
+//            case WIFI_TETHERING:
+//                if (mShowHotspotSetting) {
+//                    mWifiApEnablerSwitch.setSoftapEnabled(true);
+//                } else {
+//                    mWifiApEnabler.setSoftapEnabled(true);
+//                }
+//                break;
+//            case BLUETOOTH_TETHERING:
                 // turn on Bluetooth first
-                BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-                if (adapter.getState() == BluetoothAdapter.STATE_OFF) {
-                    mBluetoothEnableForTether = true;
-                    adapter.enable();
-                    mBluetoothTether.setSummary(R.string.bluetooth_turning_on);
-                    mBluetoothTether.setEnabled(false);
-                } else {
-                    BluetoothPan bluetoothPan = mBluetoothPan.get();
-                    if (bluetoothPan != null) bluetoothPan.setBluetoothTethering(true);
-                    mBluetoothTether.setSummary(R.string.bluetooth_tethering_available_subtext);
-                }
-                break;
+//                BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+//                if (adapter.getState() == BluetoothAdapter.STATE_OFF) {
+//                    mBluetoothEnableForTether = true;
+//                    adapter.enable();
+//                    mBluetoothTether.setSummary(R.string.bluetooth_turning_on);
+//                    mBluetoothTether.setEnabled(false);
+//                } else {
+//                    BluetoothPan bluetoothPan = mBluetoothPan.get();
+//                    if (bluetoothPan != null) bluetoothPan.setBluetoothTethering(true);
+//                    mBluetoothTether.setSummary(R.string.bluetooth_tethering_available_subtext);
+//                }
+//                break;
             case USB_TETHERING:
                 setUsbTethering(true);
                 break;

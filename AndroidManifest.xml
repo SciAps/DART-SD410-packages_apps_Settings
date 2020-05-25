@@ -196,7 +196,7 @@
         </activity>
 
         <!-- Keep compatibility with old shortcuts. -->
-        <activity-alias android:name=".wifi.WifiSettings"
+<!--        <activity-alias android:name=".wifi.WifiSettings"
                 android:taskAffinity="com.android.settings"
                 android:label="@string/wifi_settings"
                 android:targetActivity="Settings$WifiSettingsActivity"
@@ -310,17 +310,17 @@
                 <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity> -->
 
         <!-- Suspect activity alias: targetActivity is Settings itself, does not define a name. Remove? -->
-        <activity-alias android:name=".wifi.WifiApSettings"
+<!--        <activity-alias android:name=".wifi.WifiApSettings"
                 android:targetActivity="Settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
             </intent-filter>
-        </activity-alias>
+        </activity-alias> -->
 
         <activity android:name="Settings$ApnSettingsActivity"
                 android:label="@string/apn_settings"
@@ -341,7 +341,7 @@
                        android:value="com.android.settings.ApnSettings" />
         </activity>
 
-        <activity android:name=".SubSettings$BluetoothSubSettings"
+<!--        <activity android:name=".SubSettings$BluetoothSubSettings"
                 android:taskAffinity="com.android.settings"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:parentActivityName="Settings">
@@ -362,10 +362,10 @@
                 android:value="com.android.settings.bluetooth.BluetoothSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/bluetooth_settings" />
-        </activity>
+        </activity> -->
 
         <!-- Keep compatibility with old shortcuts. -->
-        <activity-alias android:name=".bluetooth.BluetoothSettings"
+<!--        <activity-alias android:name=".bluetooth.BluetoothSettings"
                 android:label="@string/bluetooth_settings_title"
                 android:targetActivity="Settings$BluetoothSettingsActivity"
                 android:exported="true"
@@ -374,7 +374,7 @@
                 android:value="com.android.settings.bluetooth.BluetoothSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/bluetooth_settings" />
-        </activity-alias>
+        </activity-alias> -->
 
         <activity android:name=".bluetooth.DevicePickerActivity"
                 android:theme="@style/Theme.SubSettingsDialogWhenLarge"
